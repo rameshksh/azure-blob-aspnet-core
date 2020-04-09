@@ -1,0 +1,26 @@
+﻿@model List<string>
+<table border="1">
+    <thead>
+        <tr>
+            <th>Picture</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (string SingleObj in Model)
+        {
+            <tr>
+                <td>
+                    <img src="@SingleObj" alt="@SingleObj"
+                         style="height:100px; width: auto;" />
+                </td>
+                <td>
+                    <span>
+                        @Html.ActionLink("Delete Picture", "Delete", "Home", new { uri = SingleObj }, new { })
+                    </span>
+                </td>
+            </tr>
+
+        }
+    </tbody>
+</table>  

@@ -1,0 +1,19 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@using (Html.BeginForm("Index", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    <fieldset>
+        <legend>Upload File</legend>
+        <ol>
+            <li>
+                <label style="margin-right:15px;">Select file </label>
+                <input type="file" name="FilePath" value="" />
+            </li>
+        </ol>
+        <input type="submit" value="Submit" />
+    </fieldset>
+}  
+
+@Html.PartialAsync("_ListPartial")
